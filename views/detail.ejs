@@ -1,0 +1,41 @@
+<div>
+<div class="position-relative">
+  <div class="position-absolute top-0 start-50 translate-middle-x">
+    <div class=".container mt-5">
+      <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title"><%= ToDo.nama %></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%= ToDo.due_date %></h6>
+            <p class="card-text"><%= ToDo.describe %></p>
+            <a href="/" class="btn btn-outline-success m-4">&laquo; Back</a>
+            <a href="/Konfirmasi" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Selesaikan</a>
+          </div>
+        </div>
+  </div>
+  </div>
+</div>
+  <!-- Modal -->            
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Konfirmasi Tugas</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Anda ingin menyelesaikan tugas ?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+          <form action="/selesaikan/<%= ToDo.nama %>" method="post">
+              <button type="submit" class="btn btn-primary" >Selesaikan!</button>
+          </form> 
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
